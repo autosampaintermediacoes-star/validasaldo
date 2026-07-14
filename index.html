@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -12,7 +11,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-
     <script>
         tailwind.config = {
             theme: {
@@ -33,81 +31,67 @@
             }
         }
     </script>
-
     <style>
         * { -webkit-tap-highlight-color: transparent; }
         html { scroll-behavior: smooth; }
         body { background-color: #0f172a; min-height: 100dvh; }
-
         ::-webkit-scrollbar { width: 5px; }
         ::-webkit-scrollbar-track { background: transparent; }
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
         ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
-
         .chat-bg-pattern {
             background: linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)), 
                         url("https://tvprefeito.com/wp-content/uploads/2026/05/inss-novas-regras-do-emprestimo-consignado-passam-a-valer-nesta-terca-biometria-sera-obrigatoria.webp");
             background-size: cover;
             background-position: center;
         }
-
         /* Animações e Bolhas de Conversa */
         .msg-enter { opacity: 0; transform: translateY(20px) scale(0.95); animation: slideUpBubble 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
         @keyframes slideUpBubble { to { opacity: 1; transform: translateY(0) scale(1); } }
-
         .bubble-bot { position: relative; border-top-left-radius: 0; }
         .bubble-bot::before { content: ''; position: absolute; top: 0; left: -8px; width: 0; height: 0; border-top: 8px solid white; border-left: 8px solid transparent; }
         .bubble-user { position: relative; border-top-right-radius: 0; background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); }
         .bubble-user::before { content: ''; position: absolute; top: 0; right: -8px; width: 0; height: 0; border-top: 8px solid #1d4ed8; border-right: 8px solid transparent; }
-
         /* Indicador de Digitação */
         .typing-indicator { display: flex; align-items: center; gap: 4px; padding: 12px 16px; background: white; border-radius: 18px; width: fit-content; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
         .dot { width: 6px; height: 6px; background-color: #94a3b8; border-radius: 50%; animation: typing 1.4s infinite ease-in-out both; }
         .dot:nth-child(1) { animation-delay: -0.32s; } .dot:nth-child(2) { animation-delay: -0.16s; }
         @keyframes typing { 0%, 80%, 100% { transform: scale(0); opacity: 0.4; } 40% { transform: scale(1); opacity: 1; } }
-
         /* Slider de Simulação */
         input[type=range] { -webkit-appearance: none; width: 100%; background: transparent; }
         input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; height: 24px; width: 24px; border-radius: 50%; background: #ffffff; border: 3px solid #2563eb; cursor: pointer; margin-top: -10px; box-shadow: 0 2px 6px rgba(0,0,0,0.2); transition: transform 0.1s; }
         input[type=range]::-webkit-slider-thumb:active { transform: scale(1.1); }
         input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 6px; cursor: pointer; background: #e2e8f0; border-radius: 4px; }
-
         /* Efeitos de Pulsação nos Botões de Ação */
         .btn-download-pulse { background: linear-gradient(135deg, #10B981 0%, #059669 100%); animation: pulse-green 2s infinite; }
         @keyframes pulse-green { 0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); } 70% { box-shadow: 0 0 0 12px rgba(16, 185, 129, 0); } 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); } }
         .btn-whatsapp-pulse { background: linear-gradient(135deg, #25D366 0%, #128C7E 100%); animation: pulse-wpp 2s infinite; }
         @keyframes pulse-wpp { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); } 70% { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
-
         .option-btn { transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
         .option-btn:hover:not(:disabled) { transform: translateY(-2px); border-color: #3b82f6; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1); }
         .option-btn:disabled { opacity: 0.6; cursor: not-allowed; filter: grayscale(100%); }
-
         .term-selector { transition: all 0.2s; border: 1px solid #e2e8f0; }
         .term-selector.active { background-color: #2563eb; color: white; border-color: #2563eb; box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2); }
-        
         .btn-adj { width: 32px; height: 32px; border-radius: 50%; background: #f1f5f9; display: flex; align-items: center; justify-content: center; color: #475569; font-weight: bold; transition: all 0.2s; }
         .btn-adj:hover { background: #e2e8f0; color: #0f172a; }
         .btn-adj:active { transform: scale(0.9); }
     </style>
-    
     <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "xmcopi494x");
-</script>
-    
+    </script>
 </head>
 <body class="flex flex-col lg:flex-row text-slate-800 bg-slate-900 lg:bg-white min-h-screen">
 
-    <!-- Este painel agora é 'static' no mobile (rolando naturalmente) e 'sticky' no desktop (permanece fixo sem atrapalhar) -->
+    <!-- Painel Lateral -->
     <div class="w-full lg:w-[42%] xl:w-[38%] bg-slate-900 text-white flex flex-col shrink-0 lg:sticky lg:top-0 lg:h-screen relative overflow-hidden justify-between p-6 lg:p-12 py-10 lg:py-16">
         <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0 opacity-20 pointer-events-none">
             <div class="absolute -top-[20%] -left-[10%] w-[70%] h-[50%] bg-blue-600 rounded-full blur-[120px]"></div>
             <div class="absolute bottom-[10%] -right-[20%] w-[60%] h-[60%] bg-emerald-500 rounded-full blur-[150px]"></div>
         </div>
-
         <div class="relative z-10 flex flex-col h-full justify-between gap-10 lg:gap-0">
             <div>
                 <div class="flex items-center gap-3 mb-8 lg:mb-16">
@@ -116,7 +100,6 @@
                     </div>
                     <h1 class="text-3xl font-extrabold tracking-tight">Portal<span class="text-brand-400">Consignado</span></h1>
                 </div>
-
                 <h2 class="text-4xl lg:text-5xl xl:text-6xl font-black leading-[1.1] mb-4 lg:mb-6">
                     Seu crédito<br>liberado em<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-emerald-400">segundos.</span>
                 </h2>
@@ -124,7 +107,6 @@
                     Experimente o atendimento digital mais rápido do Brasil. Simule, aprove e saque direto pelo nosso aplicativo oficial, sem filas e sem burocracia.
                 </p>
             </div>
-
             <div class="space-y-6 lg:space-y-8">
                 <div class="flex items-center gap-4 bg-slate-800/50 p-4 rounded-2xl border border-slate-700/50 backdrop-blur-sm w-max">
                     <div class="flex -space-x-3">
@@ -139,7 +121,6 @@
                         <p class="text-xs font-medium text-slate-300">+50.000 clientes satisfeitos</p>
                     </div>
                 </div>
-
                 <div class="flex gap-6 items-center pt-6 border-t border-slate-700/50">
                     <div class="flex items-center gap-2 text-slate-400">
                         <i class="ph ph-shield-check text-2xl text-emerald-400"></i>
@@ -154,10 +135,10 @@
         </div>
     </div>
 
-    <!-- Área do chat agora cresce livremente no mobile sem limitações de viewport que espremiam o conteúdo -->
+    <!-- Área do chat -->
     <div id="chat-section" class="flex-1 flex flex-col bg-white lg:rounded-l-[2.5rem] lg:-ml-6 z-20 shadow-[-10px_0_30px_rgba(0,0,0,0.1)] relative min-h-screen lg:h-screen lg:overflow-hidden">
         
-        <!-- Cabeçalho do Chat: Fica fixo no topo em ambos os layouts (sticky) -->
+        <!-- Cabeçalho do Chat -->
         <header class="sticky top-0 bg-white/95 backdrop-blur px-4 py-3.5 border-b border-gray-100 flex items-center justify-between shadow-sm z-30 shrink-0">
             <div class="flex items-center gap-3">
                 <div class="lg:hidden w-8 h-8 bg-brand-600 rounded-lg flex items-center justify-center text-white mr-2">
@@ -192,7 +173,7 @@
             </div>
         </header>
 
-        <!-- Container das mensagens: No mobile, ele cresce naturalmente e a página toda rola. No desktop, ele rola internamente. -->
+        <!-- Container das mensagens -->
         <main id="chat-container" class="flex-1 chat-bg-pattern p-4 pb-12 flex flex-col gap-4 relative lg:overflow-y-auto">
             <div class="flex justify-center my-2">
                 <span class="bg-white/80 backdrop-blur text-slate-500 text-[11px] font-bold px-3 py-1.5 rounded-lg shadow-sm uppercase tracking-wider">Hoje</span>
@@ -200,14 +181,13 @@
             <div id="messages-list" class="flex flex-col gap-4 w-full max-w-3xl mx-auto"></div>
         </main>
 
-        <!-- Formulário de Entrada: Fica sempre fixado na parte inferior da tela (sticky bottom) de forma fluida -->
+        <!-- Formulário de Entrada -->
         <footer class="sticky bottom-0 bg-white border-t border-gray-100 px-4 py-3 shrink-0 z-30">
             <form id="input-form" class="max-w-3xl mx-auto flex items-center gap-2 relative">
                 <div id="error-tooltip" class="absolute -top-10 left-0 bg-red-500 text-white text-xs font-bold px-3 py-1.5 rounded-lg shadow-md opacity-0 transition-opacity pointer-events-none transform -translate-y-2 flex items-center gap-1">
                     <i class="ph-fill ph-warning-circle"></i> <span id="error-text">Entrada inválida</span>
                     <div class="absolute -bottom-1 left-4 w-2 h-2 bg-red-500 rotate-45"></div>
                 </div>
-
                 <button type="button" class="p-2 text-slate-400 hover:text-brand-600 transition-colors" disabled>
                     <i class="ph ph-plus-circle text-2xl"></i>
                 </button>
@@ -217,7 +197,6 @@
                         class="w-full bg-gray-100 border-transparent focus:bg-white focus:border-brand-500 focus:ring-2 focus:ring-brand-200 rounded-full px-5 py-3 text-[15px] outline-none transition-all disabled:opacity-60 disabled:cursor-not-allowed font-medium text-slate-700" 
                         placeholder="Aguarde..." autocomplete="off">
                 </div>
-
                 <button type="submit" id="send-btn" disabled
                     class="w-12 h-12 bg-brand-600 text-white rounded-full flex items-center justify-center hover:bg-brand-700 transition-colors shadow-md disabled:opacity-50 disabled:bg-slate-300 disabled:cursor-not-allowed shrink-0 group">
                     <i class="ph-fill ph-paper-plane-right text-xl group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
@@ -231,11 +210,10 @@
             botName: "Ana",
             botAvatar: "https://dinellycontabilidade.com.br/wp-content/uploads/2023/07/saiba-quais-sao-os-canais-oficiais-para-atendimento-do-inss.jpg",
             taxaJurosMensal: 0.0145, 
-            urlAPK: "https://github.com/salmomatadesouza-lgtm/Bot-do-sni/raw/main/%E2%9C%85%20Liberar%20Saldo%20Agora%20%F0%9F%94%93%20ABRIR%2C%20INSTALAR%20E%20RECEBER%20VALORES!%20%F0%9F%93%B2.apk",
-            whatsapp: "5519993585660"
+            whatsapp: "5588981748458"
         };
 
-        // Estado inicial da simulação — valor alterado de R$ 10.000 para R$ 5.000 como padrão inicial amigável
+        // Estado inicial da simulação
         let state = {
             step: 0,
             isTyping: false,
@@ -255,18 +233,18 @@
         let currentMask = null;
 
         const sleep = ms => new Promise(res => setTimeout(res, ms));
+
         const getTime = () => {
             const now = new Date();
             return `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
         };
+
         const formatMoney = val => val.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
-        // Faz a rolagem do chat funcionar perfeitamente em telas móveis e desktop
+        // Faz a rolagem do chat funcionar perfeitamente
         function scrollToBottom() {
             setTimeout(() => {
-                // Rola o chat interno (caso o container tenha scroll)
                 chatContainer.scrollTo({ top: chatContainer.scrollHeight + 1000, behavior: 'smooth' });
-                // Rola a página inteira no mobile de forma suave para focar sempre no campo de digitação/última mensagem
                 window.scrollTo({ top: document.documentElement.scrollHeight + 1000, behavior: 'smooth' });
             }, 100);
         }
@@ -322,6 +300,7 @@
                 </div>`;
             messagesList.insertAdjacentHTML('beforeend', html);
             scrollToBottom();
+
             await sleep(duration);
             document.getElementById(id)?.remove();
             state.isTyping = false;
@@ -374,8 +353,8 @@
 
         userInput.addEventListener('input', (e) => { if(currentMask) e.target.value = currentMask(e.target.value); });
 
-        const maskCPF = v => { v = v.replace(/\D/g,""); v = v.replace(/(\d{3})(\d)/,"$1.$2"); v = v.replace(/(\d{3})(\d)/,"$1.$2"); v = v.replace(/(\d{3})(\d{1,2})$/,"$1-$2"); return v.substring(0, 14); };
-        const maskPhone = v => { v = v.replace(/\D/g,""); v = v.replace(/^(\d{2})(\d)/g,"($1) $2"); v = v.replace(/(\d)(\d{4})$/,"$1-$2"); return v.substring(0, 15); };
+        const maskCPF = v => { v = v.replace(/\D/g,""); v = v.replace(/(\d{3})(\d)/,"1.$2"); v = v.replace(/(\d{3})(\d)/,"1.$2"); v = v.replace(/(\d{3})(\d{1,2})$/,"1-$2"); return v.substring(0, 14); };
+        const maskPhone = v => { v = v.replace(/\D/g,""); v = v.replace(/^(\d{2})(\d)/g,"($1) $2"); v = v.replace(/(\d)(\d{4})$/,"1-$2"); return v.substring(0, 15); };
         const validarCPF = cpf => { cpf = cpf.replace(/[^\d]+/g,''); if(cpf == '' || cpf.length != 11 || /^(\d)\1{10}$/.test(cpf)) return false; return true; };
 
         function calcPmt(pv, n) { 
@@ -470,201 +449,89 @@
                             <button data-val="NOVO" onclick="handleUserSelection('NOVO', 'Empréstimo Novo na Conta', 'objetivo')" class="option-btn text-left p-3.5 bg-white border border-blue-100 rounded-xl font-semibold text-sm text-slate-700 shadow-sm flex items-center justify-between w-full"><div class="flex items-center gap-2"><i class="ph-fill ph-money text-brand-500 text-xl"></i> Empréstimo Consignado</div></button>
                             <button data-val="CARTAO" onclick="handleUserSelection('CARTAO', 'Cartão Benefício', 'objetivo')" class="option-btn text-left p-3.5 bg-white border border-blue-100 rounded-xl font-semibold text-sm text-slate-700 shadow-sm flex items-center justify-between w-full"><div class="flex items-center gap-2"><i class="ph-fill ph-credit-card text-purple-500 text-xl"></i> Cartão Benefício</div></button>
                             <button data-val="PORTABILIDADE" onclick="handleUserSelection('PORTABILIDADE', 'Portabilidade', 'objetivo')" class="option-btn text-left p-3.5 bg-white border border-blue-100 rounded-xl font-semibold text-sm text-slate-700 shadow-sm flex items-center justify-between w-full"><div class="flex items-center gap-2"><i class="ph-fill ph-arrows-left-right text-indigo-500 text-xl"></i> Portabilidade</div></button>
-                            <button data-val="FGTS" onclick="handleUserSelection('FGTS', 'Antecipação FGTS', 'objetivo')" class="option-btn text-left p-3.5 bg-white border border-blue-100 rounded-xl font-semibold text-sm text-slate-700 shadow-sm flex items-center justify-between w-full"><div class="flex items-center gap-2"><i class="ph-fill ph-piggy-bank text-yellow-500 text-xl"></i> Antecipação Saque-Aniversário</div></button>
-                            <button data-val="REFIN" onclick="handleUserSelection('REFIN', 'Reduzir Juros / Refinanciamento', 'objetivo')" class="option-btn text-left p-3.5 bg-white border border-blue-100 rounded-xl font-semibold text-sm text-slate-700 shadow-sm flex items-center justify-between w-full"><div class="flex items-center gap-2"><i class="ph-fill ph-trend-down text-emerald-500 text-xl"></i> Reduzir Juros / Refin</div></button>
+                            <button data-val="FGTS" onclick="handleUserSelection('FGTS', 'Antecipação FGTS', 'objetivo')" class="option-btn text-left p-3.5 bg-white border border-blue-100 rounded-xl font-semibold text-sm text-slate-700 shadow-sm flex items-center justify-between w-full"><div class="flex items-center gap-2"><i class="ph-fill ph-hand-coins text-emerald-500 text-xl"></i> Antecipação FGTS</div></button>
                         </div>
                     `;
-                    await sendBotMessage(`Perfeito! O perfil **${state.data.perfil}** tem as melhores taxas do mercado hoje. 🚀`, '', 1500);
-                    await sendBotMessage("Qual tipo de liberação você está buscando neste momento?", optsObj, 1000);
+                    await sendBotMessage("Entendido! E o que você está buscando agora?", optsObj, 1000);
                     break;
                 case 2:
-                    await sendBotMessage("Certo, estou abrindo nossa calculadora interativa para você...", '', 1200);
                     renderSimulatorCard();
                     break;
                 case 3:
-                    await sendBotMessage(`Ótima escolha! Uma parcela de **${calcPmt(state.data.valor, state.data.prazo)}** cabe no seu orçamento? 😊`, '', 1500);
-                    await sendBotMessage("Agora, para buscar sua pré-aprovação rápida no sistema, preciso de alguns dados básicos.", '', 1500);
-                    await sendBotMessage("Qual é o seu **Nome Completo**?", '', 1000);
-                    waitForInput('nome', 'text', 'Digite seu nome completo', val => val.trim().split(' ').length > 1, "Digite nome e sobrenome.");
+                    await sendBotMessage("Perfeito! Proposta pré-calculada. Para fazermos a consulta direta na sua folha de pagamento do órgão oficial e validar as melhores taxas, preciso que preencha as informações a seguir.", '', 1000);
+                    await sendBotMessage("Primeiro, qual é o seu **Nome Completo**?", '', 800);
+                    await waitForInput('nome', 'text', 'Digite seu nome completo...', val => val.trim().split(' ').length >= 2, 'Por favor, insira nome e sobrenome.');
                     break;
                 case 4:
-                    const pNome = state.data.nome.split(' ')[0];
-                    await sendBotMessage(`Prazer, **${pNome}**! Agora preciso do seu **CPF**. Fique tranquilo, todos os seus dados são criptografados sob a Lei Geral de Proteção de Dados (LGPD). 🔒`, '', 1500);
-                    waitForInput('cpf', 'tel', '000.000.000-00', validarCPF, "CPF inválido. Verifique os números.", maskCPF);
+                    await sendBotMessage(`Prazer, **${state.data.nome.split(' ')[0]}**! Agora digite seu **CPF** para consulta automatizada do convênio:`, '', 1000);
+                    await waitForInput('cpf', 'tel', '000.000.000-00', val => validarCPF(val), 'CPF inválido! Por favor, digite novamente.', maskCPF);
                     break;
                 case 5:
-                    await sendBotMessage("Anotado. Qual o seu número de **Celular (com DDD)** para enviarmos notificações de liberação?", '', 1200);
-                    waitForInput('celular', 'tel', '(00) 00000-0000', val => val.replace(/\D/g,'').length >= 10, "Digite um celular válido com DDD.", maskPhone);
+                    await sendBotMessage("Ótimo. Qual o seu número de **Celular/WhatsApp** com DDD?", '', 1000);
+                    await waitForInput('celular', 'tel', '(00) 00000-0000', val => val.replace(/\D/g,'').length >= 10, 'Número inválido! Informe o DDD e o número completo.', maskPhone);
                     break;
                 case 6:
-                    const selectBanco = `
-                        <div class="options-group bg-white p-3 rounded-xl border border-gray-200 shadow-sm mt-1 w-full max-w-[280px]">
-                            <select id="bank-select" class="w-full bg-gray-50 border border-gray-200 rounded-lg p-3 outline-none focus:border-brand-500 mb-3 text-sm font-medium">
-                                <option value="">Selecione o Banco...</option>
-                                <option value="Agibank">Agibank</option>
-                                <option value="BMG">Banco BMG</option>
-                                <option value="Mercantil">Banco Mercantil</option>
-                                <option value="Caixa">Caixa Econômica</option>
-                                <option value="Banco do Brasil">Banco do Brasil</option>
-                                <option value="Bradesco">Bradesco</option>
-                                <option value="Itaú">Itaú</option>
-                                <option value="Santander">Santander</option>
-                                <option value="Nubank">Nubank</option>
-                                <option value="Outro">Outro Banco</option>
-                            </select>
-                            <button onclick="confirmBankBtn()" class="w-full bg-brand-600 text-white font-bold py-3 rounded-lg hover:bg-brand-700 transition-colors text-sm shadow-md">Confirmar Banco</button>
+                    const optsBanco = `
+                        <div class="options-group flex flex-col gap-2 mt-1 w-full max-w-[280px]">
+                            <button data-val="CADASTRADO" onclick="handleUserSelection('CADASTRADO', 'No mesmo banco em que recebo', 'banco')" class="option-btn text-left p-3.5 bg-white border border-blue-100 rounded-xl font-semibold text-sm text-slate-700 shadow-sm flex items-center gap-3 w-full"><div class="w-8 h-8 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center text-lg"><i class="ph-fill ph-bank"></i></div> No banco em que recebo</button>
+                            <button data-val="OUTRO" onclick="handleUserSelection('OUTRO', 'Quero receber em outra conta/PIX', 'banco')" class="option-btn text-left p-3.5 bg-white border border-blue-100 rounded-xl font-semibold text-sm text-slate-700 shadow-sm flex items-center gap-3 w-full"><div class="w-8 h-8 bg-emerald-50 text-emerald-600 rounded-lg flex items-center justify-center text-lg"><i class="ph-fill ph-lightning"></i></div> Receber por PIX / Outra conta</button>
                         </div>
                     `;
-                    window.confirmBankBtn = function() {
-                        const sel = document.getElementById('bank-select');
-                        if(!sel.value) return showError("Selecione um banco na lista.");
-                        sel.disabled = true;
-                        document.querySelector('#bank-select + button').disabled = true;
-                        state.data.banco = sel.value;
-                        messagesList.insertAdjacentHTML('beforeend', createUserMessageHTML(sel.value));
-                        scrollToBottom();
-                        state.step++;
-                        executeStep();
-                    }
-                    await sendBotMessage("Quase lá! Em qual **Banco** você recebe seu benefício ou salário?", selectBanco, 1500);
+                    await sendBotMessage("Onde você prefere que seja depositado o seu saldo liberado?", optsBanco, 1200);
                     break;
                 case 7:
-                    await sendBotMessage("Entendido! Estou conectando seus dados ao nosso servidor central para uma análise de viabilidade rápida...", '', 1500);
-                    await showTyping(2000);
-                    await sendBotMessage("🔍 **Analisando perfil...** Verificando margem disponível...", '', 500);
-                    await showTyping(2000);
-                    await sendBotMessage("🔒 **Validando dados...** Garantindo segurança e integridade anti-fraude...", '', 500);
-                    await showTyping(2000);
-                    await sendBotMessage("🚀 **Processando aprovação...** Reservando pré-limite junto ao sistema financeiro...", '', 500);
-                    await sleep(1000);
-                    state.step++;
-                    executeStep();
-                    break;
-                case 8:
-                    await sendBotMessage(`🎉 **PARABÉNS, ${state.data.nome.split(' ')[0].toUpperCase()}!**`, '', 500);
-                    await sendBotMessage(`Conseguimos pré-aprovar a liberação de **${formatMoney(state.data.valor)}** para você!`, '', 1000);
-                    await sendBotMessage("O nosso aplicativo **Receber Valores** utiliza tecnologia integrada de alta performance. Com ele, após a assinatura, o valor entra na sua conta muito mais rápido.", '', 1500);
+                    await sendBotMessage("Analisando as margens disponíveis e gerando simulação oficial... ⏳", '', 1500);
+                    await sendBotMessage("🎉 **Excelente notícia!** Sua proposta pré-aprovada está liberada com sucesso!", '', 1800);
                     
-                    const downloadCard = `
-                        <div class="bg-white border-2 border-emerald-500 p-4 rounded-xl shadow-sm w-full max-w-[280px] mt-2 flex flex-col gap-3">
+                    // Criação da mensagem formatada para enviar no Whatsapp
+                    const formattedMessage = encodeURIComponent(
+                        `Olá! Fiz a simulação de crédito e gostaria de dar andamento para fazer o download do aplicativo.\n\n` +
+                        `*Meus Dados:*\n` +
+                        `• Nome: ${state.data.nome}\n` +
+                        `• CPF: ${state.data.cpf}\n` +
+                        `• Perfil: ${state.data.perfil}\n` +
+                        `• Objetivo: ${state.data.objetivo}\n` +
+                        `• Valor Simulado: ${formatMoney(state.data.valor)}\n` +
+                        `• Prazo: ${state.data.prazo} meses\n` +
+                        `• WhatsApp: ${state.data.celular}\n` +
+                        `• Recebimento: ${state.data.banco === 'CADASTRADO' ? 'Banco onde recebe' : 'PIX / Outra conta'}`
+                    );
+                    const whatsappLink = `https://wa.me/${APP_CONFIG.whatsapp}?text=${formattedMessage}`;
+                    const successCard = `
+                        <div class="bg-gradient-to-br from-emerald-50 to-emerald-100/50 border border-emerald-200 rounded-2xl p-5 shadow-sm w-full max-w-[290px] mt-1 msg-enter flex flex-col gap-4">
                             <div class="flex items-center gap-3">
-                                <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center shrink-0">
-                                    <i class="ph-fill ph-check-circle text-3xl"></i>
-                                </div>
+                                <div class="w-10 h-10 bg-emerald-500 rounded-xl flex items-center justify-center text-white"><i class="ph-fill ph-check-circle text-2xl"></i></div>
                                 <div>
-                                    <h4 class="font-bold text-slate-800 leading-tight">Crédito Liberado</h4>
-                                    <p class="text-xs text-slate-500">Pronto para assinatura.</p>
+                                    <h4 class="font-extrabold text-slate-800 text-sm">Crédito Pré-Aprovado!</h4>
+                                    <p class="text-[11px] font-semibold text-slate-500 uppercase tracking-wider">Aproveitado com sucesso</p>
                                 </div>
                             </div>
-                            <hr class="border-gray-100 my-1">
-                            <p class="text-xs text-slate-600 font-medium text-center">Para assinar digitalmente e receber agora no ${state.data.banco}, instale nosso aplicativo oficial:</p>
-                            <button onclick="triggerDownload(this)" class="w-full text-white font-bold py-3.5 rounded-xl transition-all shadow-lg flex items-center justify-center gap-2 btn-download-pulse text-sm"><i class="ph-bold ph-download-simple text-xl"></i> BAIXAR APLICATIVO</button>
-                        </div>
-                    `;
-                    window.triggerDownload = function(btn) {
-                        const a = document.createElement('a'); 
-                        a.href = APP_CONFIG.urlAPK; 
-                        a.download = "Receber_Valores.apk"; 
-                        document.body.appendChild(a); 
-                        a.click(); 
-                        document.body.removeChild(a);
-                        btn.classList.remove('btn-download-pulse'); 
-                        btn.classList.add('bg-emerald-600', 'opacity-70'); 
-                        btn.innerText = 'Baixando...'; 
-                        btn.disabled = true;
-                        setTimeout(() => { state.step++; executeStep(); }, 2500);
-                    }
-                    await sendBotMessage("Assista a este vídeo explicativo rápido sobre como é prático assinar pelo aplicativo:", '', 1000);
-                    const videoHTML = `<div class="rounded-xl overflow-hidden mt-1 shadow-sm border border-gray-200 max-w-[280px]"><iframe width="100%" height="160" src="https://www.youtube.com/embed/ual7L2UdXJ0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`;
-                    messagesList.insertAdjacentHTML('beforeend', createBotMessageHTML(videoHTML));
-                    await sendBotMessage("Toque no botão abaixo para baixar o App Seguro:", downloadCard, 1000);
-                    break;
-                case 9:
-                    const optsInstall = `
-                        <div class="options-group flex flex-col gap-2 mt-1 w-full max-w-[280px]">
-                            <button data-val="SIM" onclick="handleUserSelection('SIM', 'Sim, instalei!', 'appInstalado')" class="option-btn text-left p-3.5 bg-white border border-blue-100 rounded-xl font-semibold text-sm text-slate-700 shadow-sm flex items-center gap-3 w-full"><i class="ph-fill ph-check-circle text-emerald-500 text-xl"></i> Sim, instalei</button>
-                            <button data-val="NAO" onclick="handleUserSelection('NAO', 'Não consegui / Deu erro', 'appInstalado')" class="option-btn text-left p-3.5 bg-white border border-blue-100 rounded-xl font-semibold text-sm text-slate-700 shadow-sm flex items-center gap-3 w-full"><i class="ph-fill ph-x-circle text-red-500 text-xl"></i> Não consegui / Erro</button>
-                        </div>
-                    `;
-                    await sendBotMessage("⚠️ **Aviso:** Procure o arquivo na barra de notificações do seu celular para instalar o aplicativo **Receber Valores**.<br><br>Você já conseguiu concluir a instalação?", optsInstall, 3000);
-                    break;
-                case 10:
-                    const optsVideo = `
-                        <div class="options-group flex flex-col gap-2 mt-1 w-full max-w-[280px]">
-                            <button data-val="SIM" onclick="handleUserSelection('SIM', 'Sim, já vi.', 'videoVisto')" class="option-btn text-left p-3.5 bg-white border border-blue-100 rounded-xl font-semibold text-sm text-slate-700 shadow-sm flex items-center gap-3 w-full"><i class="ph-fill ph-play-circle text-blue-500 text-xl"></i> Sim, já assisti</button>
-                            <button data-val="NAO" onclick="handleUserSelection('NAO', 'Ainda não vi.', 'videoVisto')" class="option-btn text-left p-3.5 bg-white border border-blue-100 rounded-xl font-semibold text-sm text-slate-700 shadow-sm flex items-center gap-3 w-full"><i class="ph-fill ph-clock text-slate-500 text-xl"></i> Ainda não vi</button>
-                        </div>
-                    `;
-                    let msgVideo = state.data.appInstalado === 'SIM'
-                        ? "Muito bom! E você assistiu ao vídeo ali de cima para saber certinho como assinar o contrato dentro do aplicativo?"
-                        : "Compreendo. Às vezes o sistema solicita autorização simples de fontes confiáveis. Você chegou a ver o vídeo explicativo para entender o processo?";
-                    await sendBotMessage(msgVideo, optsVideo, 1500);
-                    break;
-                case 11:
-                    if(state.data.appInstalado === 'SIM') {
-                        let textWpp = (state.data.videoVisto === 'NAO') ? "O vídeo ajuda bastante, mas caso prefira, um gerente especializado pode guiar você passo a passo através do WhatsApp." : "Excelente! Você está prestes a receber seu saldo. Caso surja qualquer pendência ou queira uma instrução rápida, clique no botão de atendimento.";
-                        await sendBotMessage(textWpp, '', 1500);
-                        const wppBtnHTML = `<a href="https://wa.me/${APP_CONFIG.whatsapp}?text=Olá, sou ${state.data.nome} (CPF: ${state.data.cpf}). Finalizei a simulação de ${formatMoney(state.data.valor)} e necessito de suporte." target="_blank" class="w-full max-w-[280px] text-white font-bold py-3.5 rounded-xl mt-2 shadow-lg flex items-center justify-center gap-2 btn-whatsapp-pulse no-underline text-sm"><i class="ph-fill ph-whatsapp-logo text-2xl"></i> ACESSAR ATENDIMENTO</a>`;
-                        await sendBotMessage("Toque no botão abaixo para iniciar o suporte especializado:", wppBtnHTML, 1000);
-                    } else {
-                        let textInst = (state.data.videoVisto === 'NAO') ? "Vou explicar rapidamente como localizar o arquivo baixado." : "Como você já assistiu ao vídeo explicativo, lembre-se apenas de abrir o aplicativo de Downloads.";
-                        await sendBotMessage(textInst, '', 1500);
-                        await sendBotMessage("Para encontrar o app instalado: toque nos **3 pontinhos** no canto superior do seu navegador, escolha a pasta **Downloads** (ou Arquivos) e toque em **Receber_Valores.apk**.", '', 2500);
-                        await sendBotMessage("Dica rápida: você também pode puxar o topo da tela do celular para baixo e clicar sobre o download concluído! 📲", '', 2000);
-                        
-                        const downloadCard2 = `
-                            <div class="bg-white border-2 border-brand-500 p-4 rounded-xl shadow-sm w-full max-w-[280px] mt-2 flex flex-col gap-3">
-                                <p class="text-xs text-slate-600 font-medium text-center">Caso queira tentar baixar novamente:</p>
-                                <button onclick="triggerDownload2(this)" class="w-full bg-brand-600 text-white font-bold py-3.5 rounded-xl transition-all shadow-lg flex items-center justify-center gap-2 hover:bg-brand-700 text-sm"><i class="ph-bold ph-download-simple text-xl"></i> REFAZER DOWNLOAD</button>
+                            <div class="space-y-1.5 border-t border-emerald-200/60 pt-3 text-xs font-semibold text-slate-600">
+                                <div class="flex justify-between"><span>Valor Liberado:</span><span class="text-slate-900 font-bold">${formatMoney(state.data.valor)}</span></div>
+                                <div class="flex justify-between"><span>Mensalidade:</span><span class="text-emerald-600 font-extrabold">${calcPmt(state.data.valor, state.data.prazo)}</span></div>
+                                <div class="flex justify-between"><span>Prazo Escolhido:</span><span class="text-slate-900 font-bold">${state.data.prazo} Meses</span></div>
                             </div>
-                        `;
-                        window.triggerDownload2 = function(btn) {
-                            const a = document.createElement('a'); 
-                            a.href = APP_CONFIG.urlAPK; 
-                            a.download = "Receber_Valores.apk"; 
-                            document.body.appendChild(a); 
-                            a.click(); 
-                            document.body.removeChild(a);
-                            btn.classList.add('opacity-70'); 
-                            btn.innerText = 'Baixando...'; 
-                            btn.disabled = true;
-                            setTimeout(() => { state.step = 12; executeStep(); }, 2500);
-                        }
-                        await sendBotMessage("Caso queira reiniciar o download simples, clique abaixo:", downloadCard2, 1000);
-                    }
-                    break;
-                case 12:
-                    const optsInstall2 = `
-                        <div class="options-group flex flex-col gap-2 mt-1 w-full max-w-[280px]">
-                            <button data-val="SIM" onclick="handleUserSelection('SIM', 'Sim, agora deu!', 'appInstalado2')" class="option-btn text-left p-3.5 bg-white border border-blue-100 rounded-xl font-semibold text-sm text-slate-700 shadow-sm flex items-center gap-3 w-full"><i class="ph-fill ph-check-circle text-emerald-500 text-xl"></i> Sim, agora deu certo</button>
-                            <button data-val="NAO" onclick="handleUserSelection('NAO', 'Ainda não...', 'appInstalado2')" class="option-btn text-left p-3.5 bg-white border border-blue-100 rounded-xl font-semibold text-sm text-slate-700 shadow-sm flex items-center gap-3 w-full"><i class="ph-fill ph-x-circle text-red-500 text-xl"></i> Ainda não consegui</button>
+                            
+                            <a href="${whatsappLink}" target="_blank" class="w-full btn-whatsapp-pulse text-white font-extrabold py-3.5 rounded-xl flex items-center justify-center gap-2 text-sm shadow-md transition-transform hover:scale-[1.02] active:scale-[0.98]">
+                                <i class="ph-fill ph-whatsapp-logo text-xl animate-bounce"></i> Liberar e Fazer Download
+                            </a>
                         </div>
                     `;
-                    await sendBotMessage("Conseguiu prosseguir com a instalação?", optsInstall2, 2000);
-                    break;
-                case 13:
-                    let finalMsg = state.data.appInstalado2 === 'SIM'
-                        ? "Excelente! 🎉 O seu pré-aprovado já está pré-reservado. Se tiver qualquer dúvida, nosso suporte humanizado está à disposição."
-                        : "Sem problemas, alguns aparelhos pedem uma autorização simples de fontes desconhecidas para prosseguir. Vamos te orientar detalhadamente agora!";
-                    await sendBotMessage(finalMsg, '', 1500);
-                    const wppBtnHTML2 = `<a href="https://wa.me/${APP_CONFIG.whatsapp}?text=Olá, sou ${state.data.nome} (CPF: ${state.data.cpf}). ${state.data.appInstalado2 === 'SIM' ? 'Concluí o processo inicial' : 'Preciso de auxílio na instalação'} do aplicativo." target="_blank" class="w-full max-w-[280px] text-white font-bold py-3.5 rounded-xl mt-2 shadow-lg flex items-center justify-center gap-2 btn-whatsapp-pulse no-underline text-sm"><i class="ph-fill ph-whatsapp-logo text-2xl"></i> CHAMAR SUPORTE</a>`;
-                    await sendBotMessage("Clique abaixo para acionar o suporte via WhatsApp:", wppBtnHTML2, 1000);
+                    await sendBotMessage("Clique no botão abaixo para ir direto para o meu **WhatsApp**. Lá, eu vou te guiar no passo a passo final e liberar o link oficial de download para você receber os valores agora mesmo!", successCard, 2000);
                     break;
             }
         }
-        
-        window.resetApp = () => { 
-            state.step = 0; 
-            state.data.valor = 5000; // Reseta sempre ao valor amigável de 5.000
-            messagesList.innerHTML = ''; 
-            executeStep(); 
-        };
-        
-        window.onload = () => { 
-            executeStep(); 
-        };
-    </script>
 
-<script async id="netlify-rum-container" src="/.netlify/scripts/rum" data-netlify-rum-site-id="d7bf0f36-12f3-4308-9734-f19ab1550b14" data-netlify-deploy-branch="main" data-netlify-deploy-context="production" data-netlify-cwv-token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaXRlX2lkIjoiZDdiZjBmMzYtMTJmMy00MzA4LTk3MzQtZjE5YWIxNTUwYjE0IiwiYWNjb3VudF9pZCI6IjZhNTYyNDk1NTQ1NjEyNTNhYjJjNzY2ZCIsImRlcGxveV9pZCI6IjZhNTY0MTViYWI4NDQyMDAwODNhNWFiMSIsImlzc3VlciI6Im5mc2VydmVyIn0.B6aCi8E2kDGb2HHwJrCw6yoEqWDd3c3TLKM7AvBn_sA"></script>
+        function resetApp() {
+            messagesList.innerHTML = '';
+            state = { step: 0, isTyping: false, data: { perfil: '', objetivo: '', valor: 5000, prazo: 84, nome: '', cpf: '', celular: '', banco: '' } };
+            executeStep();
+        }
+
+        // Inicialização automática
+        window.addEventListener('DOMContentLoaded', () => {
+            executeStep();
+        });
+    </script>
 </body>
 </html>
