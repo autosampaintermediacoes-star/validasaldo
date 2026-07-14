@@ -353,8 +353,9 @@
 
         userInput.addEventListener('input', (e) => { if(currentMask) e.target.value = currentMask(e.target.value); });
 
-        const maskCPF = v => { v = v.replace(/\D/g,""); v = v.replace(/(\d{3})(\d)/,"1.$2"); v = v.replace(/(\d{3})(\d)/,"1.$2"); v = v.replace(/(\d{3})(\d{1,2})$/,"1-$2"); return v.substring(0, 14); };
-        const maskPhone = v => { v = v.replace(/\D/g,""); v = v.replace(/^(\d{2})(\d)/g,"($1) $2"); v = v.replace(/(\d)(\d{4})$/,"1-$2"); return v.substring(0, 15); };
+        // MÁSCARAS CORRIGIDAS (Correção do placeholder de replace "$1" em vez de "1")
+        const maskCPF = v => { v = v.replace(/\D/g,""); v = v.replace(/(\d{3})(\d)/,"$1.$2"); v = v.replace(/(\d{3})(\d)/,"$1.$2"); v = v.replace(/(\d{3})(\d{1,2})$/,"$1-$2"); return v.substring(0, 14); };
+        const maskPhone = v => { v = v.replace(/\D/g,""); v = v.replace(/^(\d{2})(\d)/g,"($1) $2"); v = v.replace(/(\d)(\d{4})$/,"$1-$2"); return v.substring(0, 15); };
         const validarCPF = cpf => { cpf = cpf.replace(/[^\d]+/g,''); if(cpf == '' || cpf.length != 11 || /^(\d)\1{10}$/.test(cpf)) return false; return true; };
 
         function calcPmt(pv, n) { 
